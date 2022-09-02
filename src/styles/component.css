@@ -1,0 +1,13 @@
+:root {
+  --color-bluelight: #4263eb;
+  --color-blue: #364fc7;
+  --color-black: #0a0c0d;
+  --color-grey1: #212529;
+  --color-grey2: #495057;
+  --color-grey3: #868e96;
+  --color-grey4: #dee2e6;
+  --color-greytransparent: rgba(33, 37, 41, 0.5);
+  --color-white: #ffffff;
+
+  --font-base: "Inter", sans-serif;
+}
