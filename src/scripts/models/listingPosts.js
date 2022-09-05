@@ -45,7 +45,7 @@ export class ListingPosts {
     imgHeart.src = "../assets/heartBlack.png";
 
     span.className = "number-likes";
-    span.innerText = 20;
+    span.innerText = post.likes.length;
 
     this.ul.append(li);
     li.append(img, div, divContent, divBtnLike);
@@ -57,12 +57,13 @@ export class ListingPosts {
   static async profile(dados) {
     const img = document.querySelector("#userImg-submit");
     const name = document.querySelector("#username-submit");
-    const follows = document.querySelector("#user-follows");
+    const follows = document.getElementById("user-follows");
     const job = document.querySelector("#userJob");
 
     img.src = dados.image;
     name.innerText = dados.username;
-    follows.innerText = `${dados.followers_amount} seguidores`;
+    follows.innerText = `${dados.following_amount}seguidores`;
     job.innerText = dados.work_at;
+    console.log(dados);
   }
 }

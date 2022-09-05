@@ -23,6 +23,7 @@ export class FollowUsers {
   }
 
   static cardUsers(data) {
+    const { uuid, username, work_at, image, followers } = data;
     const userId = localStorage.getItem("@redeKenzie:userId");
 
     const li = document.createElement("li");
@@ -33,6 +34,7 @@ export class FollowUsers {
     const button = document.createElement("button");
 
     li.className = "cards-follow";
+    li.id = uuid;
 
     img.className = "img-homepage";
     img.id = "users-img-follow";
@@ -52,12 +54,12 @@ export class FollowUsers {
     li.append(img, div, button);
     div.append(h3, p);
 
-    const { uuid, username, work_at, image, followers } = data;
     if (followers.length > 0) {
       followers.forEach((follow) => {
-        if (follow.uuid == userId) {
+        if (follow.followers_users_id.uuid == userId) {
           button.id = follow.uuid;
           button.innerText = "Seguindo";
+          button.classList.add("btn--following");
         }
       });
     }
@@ -73,22 +75,24 @@ export class FollowUsers {
         event.preventDefault();
 
         const idFollow = btn.id;
+        btn.classList.add("btn--following");
 
         if (!idFollow) {
           const idUser = btn.closest("li").id;
-          console.log(idUser);
           const user = {
             following_users_uuid: idUser,
           };
-          console.log(user);
-          const following = await Requests.following(user);
+
+          const following = Requests.following(user);
           btn.id = following.uuid;
           btn.innerText = "Seguindo";
         } else {
-          const dataId = btn.id;
-          const unfollow = Requests.unfollow(dataId);
+          const idUser = btn.closest("li").id;
+
+          const unfollow = Requests.unfollow(idUser);
           btn.innerText = "Seguir";
           btn.removeAttribute("id");
+          btn.classList.remove("btn--following");
         }
       });
     });

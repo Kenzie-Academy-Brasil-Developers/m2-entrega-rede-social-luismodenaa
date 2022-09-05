@@ -19,7 +19,7 @@ export class Homepage {
 
   static async renderPosts() {
     const posts = await Requests.renderAllPosts();
-    posts.reverse().forEach((post) => {
+    posts.forEach((post) => {
       ListingPosts.renderCards(post);
     });
   }
