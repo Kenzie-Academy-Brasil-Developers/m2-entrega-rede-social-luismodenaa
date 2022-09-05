@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/component.css" />
+    <link rel="stylesheet" href="../styles/homepage.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TOASTIFY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>Rede Social</title>
+  </head>
+  <body>
+    <header>
+      <h1>TechPosters</h1>
+      <a id="btnLogout">Sair</a>
+    </header>
+
+    <section class="user-post">
+      <img id="userImg-submit" class="img-homepage" src="" alt="" />
+      <div class="userDataSubmit">
+        <h3 id="username-submit">
+          <span id="user-follows">0 seguidores</span>
+        </h3>
+
+        <p id="userJob"></p>
+      </div>
+      <form>
+        <div class="inputsPost">
+          <input
+            type="text"
+            id="inputTitle"
+            placeholder="Digite aqui o título do post"
+          />
+          <input
+            type="text"
+            id="inputPost"
+            placeholder="Digite aqui a descrição do post"
+          />
+        </div>
+        <button id="btnSubmitPost" type="submit">Postar</button>
+      </form>
+    </section>
+    <section class="follow-users">
+      <h3>Sugestões para você seguir</h3>
+      <div>
+        <ul class="follow-ul"></ul>
+      </div>
+    </section>
+    <section class="posts-users">
+      <h3>Posts</h3>
+      <ul class="posts-ul"></ul>
+    </section>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../scripts/models/homepage.js"></script>
+  </body>
+</html>

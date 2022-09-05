@@ -6,8 +6,14 @@
   --color-grey2: #495057;
   --color-grey3: #868e96;
   --color-grey4: #dee2e6;
-  --color-greytransparent: rgba(33, 37, 41, 0.5);
+  --color-greytransparent: #495057dc;
   --color-white: #ffffff;
+  --color-whitebackground: #e9e9e9;
+  --color-modalbackground: #1b1b1bd7;
 
   --font-base: "Inter", sans-serif;
+}
+
+.hidden {
+  display: none;
 }
