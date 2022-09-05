@@ -1,0 +1,355 @@
+body {
+  font-family: var(--font-base);
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-grey1);
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+}
+
+header > h1 {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+header > a {
+  color: var(--color-grey4);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+header > a:hover {
+  background-color: var(--color-greytransparent);
+}
+
+/* SECTION USER POST */
+
+section {
+  width: 17rem;
+  margin: 3rem auto;
+  background-color: redf;
+}
+
+.user-post {
+  margin-top: 7rem;
+}
+
+.img-homepage {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+}
+
+.userDataSubmit {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.userDataSubmit > h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.userDataSubmit > h3 > span {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  color: var(--color-grey3);
+}
+
+.userDataSubmit > p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-grey3);
+}
+
+.inputsPost > input {
+  margin-top: 0.8rem;
+
+  border-radius: 4px;
+  border-style: none;
+}
+
+#inputTitle {
+  padding: 0.6rem;
+  width: 15.6rem;
+  border: 2px solid var(--color-grey4);
+}
+
+#inputPost {
+  width: 12.8rem;
+  padding: 2rem;
+  border: 2px solid var(--color-grey4);
+}
+
+#inputTitle:hover,
+#inputPost:hover {
+  outline: var(--color-blue) solid 1.5px;
+}
+
+#btnSubmitPost {
+  margin: 1rem 0;
+  margin-left: 13.5rem;
+  padding: 0.7rem;
+  font-size: 13px;
+  font-weight: 500;
+  border-style: none;
+  color: var(--color-greytransparent);
+  background-color: var(--color-grey4);
+  border-radius: 4px;
+}
+
+#btnSubmitPost:hover {
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+/* SECTION FOLLOW USERS */
+
+.follow-users {
+  margin-top: -1.5rem;
+}
+
+.follow-users > h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.usersFollow {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1.7rem;
+  margin-left: 0.5rem;
+}
+
+.usersFollow > h3 {
+  font-size: 16;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.usersFollow > p {
+  font-size: 13px;
+  color: var(--color-grey3);
+  font-weight: 500;
+}
+
+.cards-follow > button {
+  margin-left: 0rem;
+  margin-top: -0.5rem;
+  display: flex;
+  padding: 0.3rem;
+  border-style: none;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey1);
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--color-grey1);
+}
+
+.cards-follow > button:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+}
+
+.cards-follow {
+  min-width: 13rem;
+}
+
+.follow-ul {
+  display: flex;
+  width: 18.5rem;
+  height: 15vh;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+/* SECTION POSTS USERS */
+
+.cards-posts {
+  margin-bottom: 3rem;
+}
+
+.posts-users > h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 2.5rem;
+}
+
+.usersPosts {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1.7rem;
+  margin-left: 0.5rem;
+}
+
+.usersPosts > h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.usersPosts > p {
+  margin-top: 0.3rem;
+  font-size: 13px;
+  color: var(--color-grey3);
+  font-weight: 500;
+}
+
+.title-posts {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.desc-posts {
+  font-size: 16px;
+  color: var(--color-grey2);
+  margin-bottom: 1.5rem;
+  overflow: auto;
+  height: 20vh;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.container-btn-likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-open-post {
+  padding: 10px;
+  border-style: none;
+  background-color: var(--color-grey1);
+  color: var(--color-white);
+  border-radius: 4px;
+  margin-right: 1.5rem;
+}
+
+.number-likes {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-grey2);
+}
+
+@media (min-width: 768px) {
+  section {
+    width: 17rem;
+    margin: 3rem 2rem;
+  }
+
+  #inputTitle {
+    width: 22rem;
+  }
+
+  #inputPost {
+    width: 19.2rem;
+  }
+
+  #btnSubmitPost {
+    margin-left: 19.6rem;
+  }
+
+  .follow-users {
+    position: fixed;
+    top: 7rem;
+    right: -1rem;
+  }
+
+  .follow-ul {
+    overflow-x: hidde;
+    overflow-y: scroll;
+    flex-direction: column;
+    height: 60vh;
+    width: 16rem;
+  }
+
+  .cards-follow > button {
+    margin-left: 3.6rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .container-posts {
+    width: 27rem;
+    height: 14.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #inputTitle {
+    width: 35rem;
+  }
+
+  #inputPost {
+    width: 32.1rem;
+  }
+
+  #btnSubmitPost {
+    margin-left: 32.6rem;
+  }
+
+  .container-posts {
+    width: 38rem;
+    height: 8rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  section {
+    margin: 3rem 4rem;
+  }
+
+  .follow-users {
+    position: fixed;
+    top: 7rem;
+    right: 0rem;
+  }
+
+  .follow-ul {
+    height: 70vh;
+  }
+
+  #inputTitle {
+    width: 50rem;
+  }
+
+  #inputPost {
+    width: 47.1rem;
+  }
+
+  #btnSubmitPost {
+    margin-left: 47.6rem;
+  }
+
+  .container-posts {
+    width: 54rem;
+    height: 10rem;
+  }
+}
