@@ -46,20 +46,16 @@ export class Requests {
   static async pages() {
     const pages = await instance
       .get("/posts/")
-      .then((res) => {
-        console.log(res);
-        return res.data.count;
-      })
+      .then((res) => res.data.count)
       .catch((err) => console.log(err));
 
     Requests.renderAllPosts(pages);
-    console.log(pages);
     return pages;
   }
 
   static async renderAllPosts(pages) {
     const posts = await instance
-      .get(`/posts/?limit=10&offset=${pages}`)
+      .get(`/posts/?limit=30&offset=${pages}`)
       .then((res) => res.data.results)
       .catch((err) => console.log(err));
 
@@ -115,10 +111,13 @@ export class Requests {
     return unfollow;
   }
 
-  static async addLike() {
+  static async addLike(data) {
     const like = await instance
-      .post(`/likes/`)
-      .res((res) => res)
+      .post(`/likes/`, data)
+      .then((res) => {
+        console.log(res);
+        return res;
+      })
       .catch((err) => console.log(err));
 
     return like;
@@ -127,9 +126,10 @@ export class Requests {
   static async removeLike(data) {
     const like = await instance
       .delete(`/likes/${data}/`)
-      .res((res) => res)
+      .then((res) => {
+        console.log(res);
+        return res;
+      })
       .catch((err) => console.log(err));
   }
 }
-
-Requests.pages();

@@ -1,3 +1,5 @@
+import { Modals } from "./modal.js";
+
 export class ListingPosts {
   static ul = document.querySelector(".posts-ul");
 
@@ -16,6 +18,9 @@ export class ListingPosts {
     const span = document.createElement("span");
 
     li.className = "cards-posts";
+    li.id = post.uuid;
+    // console.log(post.uuid);
+    // console.log(post);
 
     img.className = "img-homepage";
     img.id = "users-img-posts";
@@ -43,6 +48,7 @@ export class ListingPosts {
     button.innerText = "Abrir Post";
 
     imgHeart.src = "../assets/heartBlack.png";
+    imgHeart.className = "button-like";
 
     span.className = "number-likes";
     span.innerText = post.likes.length;
@@ -52,6 +58,12 @@ export class ListingPosts {
     div.append(h3, p);
     divContent.append(h3Title, pDesc);
     divBtnLike.append(button, imgHeart, span);
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const posft = post;
+      Modals.modalPost(posft);
+    });
   }
 
   static async profile(dados) {
@@ -64,6 +76,5 @@ export class ListingPosts {
     name.innerText = dados.username;
     follows.innerText = `${dados.following_amount}seguidores`;
     job.innerText = dados.work_at;
-    console.log(dados);
   }
 }

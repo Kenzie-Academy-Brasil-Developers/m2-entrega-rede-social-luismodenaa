@@ -125,4 +125,58 @@ export class Modals {
 
     return div;
   }
+
+  static modalPost(post) {
+    const modal = document.createElement("div");
+    const body = document.querySelector("body");
+    modal.className = "modal";
+
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const divDataPost = document.createElement("div");
+    const h3 = document.createElement("h3");
+    const p = document.createElement("p");
+    const a = document.createElement("a");
+    const divContentPost = document.createElement("div");
+    const h3TitlePost = document.createElement("h3");
+    const pDescPost = document.createElement("p");
+
+    div.className = "modal-posts";
+
+    img.src = post.author.image;
+    img.className = "imguser-modal-post";
+
+    divDataPost.className = "contentuser-modal-post";
+
+    h3.className = "username-modal-post";
+    h3.innerText = post.author.username;
+
+    p.className = "jobuser-modal-post";
+    p.innerText = post.author.work_at;
+
+    a.className = "closeModal";
+    a.innerText = "X";
+
+    divContentPost.classname = "container-post-modal";
+
+    h3TitlePost.className = "title-post-modal";
+    h3TitlePost.innerText = post.title;
+
+    pDescPost.className = "desc-post-modal";
+    pDescPost.innerText = post.description;
+
+    body.append(modal);
+    modal.append(div);
+    div.append(img, divDataPost, a, divContentPost);
+    divDataPost.append(h3, p);
+    divContentPost.append(h3TitlePost, pDescPost);
+
+    const closeModalBtn = document.querySelector(".closeModal");
+
+    closeModalBtn.addEventListener("click", () => {
+      const modal = document.querySelector(".modal");
+      modal.classList.add("hidden");
+      modal.remove();
+    });
+  }
 }

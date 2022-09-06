@@ -1,6 +1,7 @@
 import { Requests } from "../requests.js";
 import { Toast } from "../toast.js";
 import { FollowUsers } from "./followUsers.js";
+import { LikeDeslike } from "./likeDeslike.js";
 import { ListingPosts } from "./listingPosts.js";
 import { PublicPost } from "./publicPost.js";
 
@@ -22,6 +23,8 @@ export class Homepage {
     posts.forEach((post) => {
       ListingPosts.renderCards(post);
     });
+
+    LikeDeslike.likeOrDeslike();
   }
 
   static async logout() {
@@ -54,3 +57,4 @@ Homepage.renderPosts();
 PublicPost.createPost();
 Requests.getUserNameImg();
 FollowUsers.randomUsers();
+Requests.pages();
