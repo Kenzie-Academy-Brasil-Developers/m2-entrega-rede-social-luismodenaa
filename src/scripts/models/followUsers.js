@@ -8,7 +8,7 @@ export class FollowUsers {
     const arrUsers = users;
     const list = [];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 20; i++) {
       let random = Math.round(Math.random() * (arrUsers.length - 1 + 0));
       if (!list.includes(random)) {
         let user = arrUsers[random];

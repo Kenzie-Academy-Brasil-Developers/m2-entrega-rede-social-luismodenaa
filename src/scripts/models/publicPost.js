@@ -1,4 +1,5 @@
 import { Requests } from "../requests.js";
+import { Homepage } from "./homepage.js";
 
 export class PublicPost {
   static createPost() {
@@ -14,6 +15,7 @@ export class PublicPost {
       };
 
       const posting = await Requests.createPost(data);
+      Homepage.renderPosts();
     });
   }
 }

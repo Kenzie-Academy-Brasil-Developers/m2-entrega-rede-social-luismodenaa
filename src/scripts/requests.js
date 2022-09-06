@@ -55,7 +55,7 @@ export class Requests {
 
   static async renderAllPosts(pages) {
     const posts = await instance
-      .get(`/posts/?limit=30&offset=${pages}`)
+      .get(`/posts/?limit=${pages}&offset=${pages}`)
       .then((res) => res.data.results)
       .catch((err) => console.log(err));
 
@@ -88,7 +88,7 @@ export class Requests {
 
   static async allUsers() {
     const users = await instance
-      .get(`/users/?limit=300&offset=300/`)
+      .get(`/users/?limit=20&offset=20/`)
       .then((res) => res.data.results)
       .catch((err) => console.log(err));
 
